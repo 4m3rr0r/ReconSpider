@@ -1,0 +1,5 @@
+http://127.0.0.1:8000/api/profile
+http://127.0.0.1:8000/api/users/{id}
+http://127.0.0.1:8000/api/v1/users?limit=10
+http://127.0.0.1:8000/graphql
+http://127.0.0.1:8000/openapi.json

@@ -1,0 +1,5 @@
+[console_scripts]
+reconspider = reconspider.cli:main
+
+[scrapy]
+settings = reconspider.settings

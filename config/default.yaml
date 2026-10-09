@@ -1,0 +1,11 @@
+max_depth: 5
+max_pages: 1000
+rate_limit: 0.5
+concurrency: 8
+timeout: 30
+max_body_bytes: 2097152
+respect_robots: true
+include_subdomains: false
+validate_passive: false
+passive: []
+output: output

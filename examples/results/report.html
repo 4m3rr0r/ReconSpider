@@ -1,0 +1,157 @@
+<!doctype html><html lang="en"><meta charset="utf-8">
+<title>ReconSpider inventory</title><style>
+body{font:15px system-ui;margin:2rem;background:#f5f7fa;color:#172b4d}
+table{border-collapse:collapse;width:100%;background:white}td,th{padding:8px;border:1px solid #dde2eb;text-align:left;overflow-wrap:anywhere}input,select{padding:8px;margin:8px}pre{white-space:pre-wrap}td:first-child{max-width:600px}
+</style><h1>ReconSpider inventory</h1><p>Classification hints describe attack surface; they do not establish vulnerabilities. Historical references do not establish current availability.</p>
+<label>Search <input id="search" type="search"></label><label>Stage <select id="stage"><option value="">All</option><option>discovered</option><option>requested</option><option>fetched</option></select></label>
+<label>Scope <select id="scope"><option value="">All</option><option value="True">In scope</option><option value="False">Out of scope</option></select></label>
+<h2>Summary</h2><pre>{
+  &quot;total_urls_discovered&quot;: 17,
+  &quot;total_discovery_observations&quot;: 18,
+  &quot;total_requests&quot;: 13,
+  &quot;total_pages_fetched&quot;: 12,
+  &quot;successful_urls&quot;: 11,
+  &quot;unique_parameter_names&quot;: [
+    &quot;id&quot;,
+    &quot;limit&quot;,
+    &quot;name&quot;,
+    &quot;q&quot;
+  ],
+  &quot;javascript_files&quot;: 1,
+  &quot;forms&quot;: 1,
+  &quot;api_endpoints&quot;: 5,
+  &quot;http_status_distribution&quot;: {
+    &quot;200&quot;: 11,
+    &quot;302&quot;: 1
+  },
+  &quot;endpoint_categories&quot;: {
+    &quot;General&quot;: 8,
+    &quot;User management&quot;: 4,
+    &quot;Redirect&quot;: 1,
+    &quot;Search&quot;: 1,
+    &quot;File download&quot;: 1,
+    &quot;API&quot;: 4,
+    &quot;GraphQL&quot;: 1,
+    &quot;Authentication&quot;: 1
+  },
+  &quot;duration_seconds&quot;: 0.461,
+  &quot;errors&quot;: [],
+  &quot;skipped_urls&quot;: [
+    {
+      &quot;kind&quot;: &quot;url&quot;,
+      &quot;raw_url&quot;: &quot;http://127.0.0.1:8000/search&quot;,
+      &quot;url&quot;: &quot;http://127.0.0.1:8000/search&quot;,
+      &quot;source&quot;: &quot;form_action&quot;,
+      &quot;discovered_from&quot;: &quot;http://127.0.0.1:8000/&quot;,
+      &quot;depth&quot;: 1,
+      &quot;in_scope&quot;: true,
+      &quot;requested&quot;: false,
+      &quot;fetched&quot;: false,
+      &quot;skip_reason&quot;: &quot;form_not_submitted&quot;,
+      &quot;endpoint_fingerprint&quot;: &quot;http://127.0.0.1:8000/search&quot;,
+      &quot;parameter_fingerprint&quot;: &quot;http://127.0.0.1:8000/search&quot;,
+      &quot;categories&quot;: [
+        &quot;Search&quot;
+      ],
+      &quot;is_api&quot;: false,
+      &quot;interesting&quot;: true,
+      &quot;classification_is_hint&quot;: true,
+      &quot;parameters&quot;: []
+    },
+    {
+      &quot;kind&quot;: &quot;url&quot;,
+      &quot;raw_url&quot;: &quot;https://external.invalid/&quot;,
+      &quot;url&quot;: &quot;https://external.invalid/&quot;,
+      &quot;source&quot;: &quot;html_anchor&quot;,
+      &quot;discovered_from&quot;: &quot;http://127.0.0.1:8000/&quot;,
+      &quot;depth&quot;: 1,
+      &quot;in_scope&quot;: false,
+      &quot;requested&quot;: false,
+      &quot;fetched&quot;: false,
+      &quot;skip_reason&quot;: &quot;out_of_scope_host&quot;,
+      &quot;endpoint_fingerprint&quot;: &quot;https://external.invalid/&quot;,
+      &quot;parameter_fingerprint&quot;: &quot;https://external.invalid/&quot;,
+      &quot;categories&quot;: [
+        &quot;General&quot;
+      ],
+      &quot;is_api&quot;: false,
+      &quot;interesting&quot;: false,
+      &quot;classification_is_hint&quot;: true,
+      &quot;parameters&quot;: []
+    },
+    {
+      &quot;kind&quot;: &quot;url&quot;,
+      &quot;raw_url&quot;: &quot;/api/profile&quot;,
+      &quot;url&quot;: &quot;http://127.0.0.1:8000/api/profile&quot;,
+      &quot;source&quot;: &quot;javascript&quot;,
+      &quot;discovered_from&quot;: &quot;http://127.0.0.1:8000/app.js&quot;,
+      &quot;depth&quot;: 2,
+      &quot;in_scope&quot;: true,
+      &quot;requested&quot;: false,
+      &quot;fetched&quot;: false,
+      &quot;skip_reason&quot;: &quot;method_metadata_only&quot;,
+      &quot;endpoint_fingerprint&quot;: &quot;http://127.0.0.1:8000/api/profile&quot;,
+      &quot;parameter_fingerprint&quot;: &quot;http://127.0.0.1:8000/api/profile&quot;,
+      &quot;categories&quot;: [
+        &quot;User management&quot;,
+        &quot;API&quot;
+      ],
+      &quot;is_api&quot;: true,
+      &quot;interesting&quot;: true,
+      &quot;classification_is_hint&quot;: true,
+      &quot;method&quot;: &quot;POST&quot;,
+      &quot;source_file&quot;: &quot;http://127.0.0.1:8000/app.js&quot;,
+      &quot;confidence&quot;: &quot;high&quot;,
+      &quot;parameters&quot;: [
+        {
+          &quot;name&quot;: &quot;name&quot;,
+          &quot;source&quot;: &quot;javascript_object&quot;,
+          &quot;location&quot;: &quot;body&quot;,
+          &quot;observed&quot;: false
+        }
+      ],
+      &quot;statically_inferred&quot;: true
+    },
+    {
+      &quot;kind&quot;: &quot;skipped&quot;,
+      &quot;url&quot;: &quot;http://127.0.0.1:8000/blocked&quot;,
+      &quot;reason&quot;: &quot;Forbidden by robots.txt&quot;,
+      &quot;fetched&quot;: false,
+      &quot;requested&quot;: false
+    },
+    {
+      &quot;kind&quot;: &quot;url&quot;,
+      &quot;raw_url&quot;: &quot;http://127.0.0.1:8000/api/users/{id}&quot;,
+      &quot;url&quot;: &quot;http://127.0.0.1:8000/api/users/{id}&quot;,
+      &quot;source&quot;: &quot;openapi&quot;,
+      &quot;discovered_from&quot;: &quot;http://127.0.0.1:8000/openapi.json&quot;,
+      &quot;depth&quot;: 4,
+      &quot;in_scope&quot;: true,
+      &quot;requested&quot;: false,
+      &quot;fetched&quot;: false,
+      &quot;skip_reason&quot;: &quot;speculative_reference&quot;,
+      &quot;endpoint_fingerprint&quot;: &quot;http://127.0.0.1:8000/api/users/{id}&quot;,
+      &quot;parameter_fingerprint&quot;: &quot;http://127.0.0.1:8000/api/users/{id}&quot;,
+      &quot;categories&quot;: [
+        &quot;User management&quot;,
+        &quot;API&quot;
+      ],
+      &quot;is_api&quot;: true,
+      &quot;interesting&quot;: true,
+      &quot;classification_is_hint&quot;: true,
+      &quot;method&quot;: &quot;GET&quot;,
+      &quot;parameters&quot;: [
+        {
+          &quot;name&quot;: &quot;id&quot;,
+          &quot;location&quot;: &quot;path&quot;,
+          &quot;source&quot;: &quot;openapi&quot;,
+          &quot;observed&quot;: false
+        }
+      ],
+      &quot;statically_inferred&quot;: true,
+      &quot;speculative&quot;: true
+    }
+  ],
+  &quot;comparison&quot;: null
+}</pre><h2>Discovered URLs</h2><table><thead><tr><th>URL</th><th>Source</th><th>Scope</th><th>Stage</th><th>Status</th><th>Categories</th></tr></thead><tbody><tr><td>http://127.0.0.1:8000/</td><td>seed</td><td>True</td><td>fetched</td><td>200</td><td>General</td></tr><tr><td>http://127.0.0.1:8000/robots.txt</td><td>standard_metadata</td><td>True</td><td>fetched</td><td>200</td><td>General</td></tr><tr><td>http://127.0.0.1:8000/sitemap.xml</td><td>standard_metadata</td><td>True</td><td>fetched</td><td>200</td><td>General</td></tr><tr><td>http://127.0.0.1:8000/account?id=1&amp;id=2</td><td>html_anchor</td><td>True</td><td>fetched</td><td>200</td><td>User management</td></tr><tr><td>http://127.0.0.1:8000/redirect</td><td>html_anchor</td><td>True</td><td>fetched</td><td>302</td><td>Redirect</td></tr><tr><td>http://127.0.0.1:8000/blocked</td><td>html_anchor</td><td>True</td><td>discovered</td><td></td><td>General</td></tr><tr><td>http://127.0.0.1:8000/app.js</td><td>script_source</td><td>True</td><td>fetched</td><td>200</td><td>General</td></tr><tr><td>http://127.0.0.1:8000/search</td><td>form_action</td><td>True</td><td>discovered</td><td></td><td>Search</td></tr><tr><td>http://127.0.0.1:8000/frame</td><td>iframe</td><td>True</td><td>fetched</td><td>200</td><td>General</td></tr><tr><td>https://external.invalid/</td><td>html_anchor</td><td>False</td><td>discovered</td><td></td><td>General</td></tr><tr><td>http://127.0.0.1:8000/sitemap.xml</td><td>robots_sitemap</td><td>True</td><td>fetched</td><td>200</td><td>General</td></tr><tr><td>http://127.0.0.1:8000/download</td><td>sitemap</td><td>True</td><td>fetched</td><td>200</td><td>File download</td></tr><tr><td>http://127.0.0.1:8000/api/v1/users?limit=10</td><td>javascript</td><td>True</td><td>fetched</td><td>200</td><td>User management, API</td></tr><tr><td>http://127.0.0.1:8000/api/profile</td><td>javascript</td><td>True</td><td>discovered</td><td></td><td>User management, API</td></tr><tr><td>http://127.0.0.1:8000/graphql</td><td>javascript</td><td>True</td><td>fetched</td><td>200</td><td>GraphQL</td></tr><tr><td>http://127.0.0.1:8000/login</td><td>http_redirect</td><td>True</td><td>fetched</td><td>200</td><td>Authentication</td></tr><tr><td>http://127.0.0.1:8000/openapi.json</td><td>json_reference</td><td>True</td><td>fetched</td><td>200</td><td>API</td></tr><tr><td>http://127.0.0.1:8000/api/users/{id}</td><td>openapi</td><td>True</td><td>discovered</td><td></td><td>User management, API</td></tr></tbody></table>
+<script>function filter(){const q=document.getElementById('search').value.toLowerCase();const stage=document.getElementById('stage').value;const scope=document.getElementById('scope').value;for(const r of document.querySelectorAll('tbody tr')){r.hidden=!r.textContent.toLowerCase().includes(q)||(stage&&r.cells[3].textContent!==stage)||(scope&&r.cells[2].textContent!==scope)}}for(const id of ['search','stage','scope'])document.getElementById(id).addEventListener('input',filter);</script></html>

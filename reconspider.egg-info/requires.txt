@@ -1,0 +1,15 @@
+Scrapy<3,>=2.14
+Twisted>=24.3
+pydantic<3,>=2
+PyYAML>=6
+httpx<1,>=0.27
+tldextract<6,>=5
+
+[browser]
+scrapy-playwright>=0.0.40
+
+[dev]
+pytest>=8
+ruff>=0.9
+build>=1
+shub>=2.15

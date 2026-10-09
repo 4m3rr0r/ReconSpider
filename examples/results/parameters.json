@@ -1,0 +1,58 @@
+[
+  {
+    "endpoint": "http://127.0.0.1:8000/account",
+    "parameters": [
+      {
+        "name": "id",
+        "source": "query_string",
+        "location": "query",
+        "observed": true
+      }
+    ]
+  },
+  {
+    "endpoint": "http://127.0.0.1:8000/api/v1/users",
+    "parameters": [
+      {
+        "name": "limit",
+        "source": "javascript_literal",
+        "location": "query",
+        "observed": false
+      }
+    ]
+  },
+  {
+    "endpoint": "http://127.0.0.1:8000/api/profile",
+    "parameters": [
+      {
+        "name": "name",
+        "source": "javascript_object",
+        "location": "body",
+        "observed": false
+      }
+    ]
+  },
+  {
+    "endpoint": "http://127.0.0.1:8000/api/users/{id}",
+    "parameters": [
+      {
+        "name": "id",
+        "location": "path",
+        "source": "openapi",
+        "observed": false
+      }
+    ]
+  },
+  {
+    "endpoint": "http://127.0.0.1:8000/search",
+    "parameters": [
+      {
+        "name": "q",
+        "type": "input",
+        "source": "html_form",
+        "location": "query",
+        "observed": true
+      }
+    ]
+  }
+]

@@ -1,0 +1,8 @@
+# Only list hosts you have permission to crawl.
+hosts:
+  - example.com
+  - "*.authorized.example.com"
+exclude:
+  - /logout*
+  - /delete*
+  - "https://example.com/private*"

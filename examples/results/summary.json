@@ -1,0 +1,149 @@
+{
+  "total_urls_discovered": 17,
+  "total_discovery_observations": 18,
+  "total_requests": 13,
+  "total_pages_fetched": 12,
+  "successful_urls": 11,
+  "unique_parameter_names": [
+    "id",
+    "limit",
+    "name",
+    "q"
+  ],
+  "javascript_files": 1,
+  "forms": 1,
+  "api_endpoints": 5,
+  "http_status_distribution": {
+    "200": 11,
+    "302": 1
+  },
+  "endpoint_categories": {
+    "General": 8,
+    "User management": 4,
+    "Redirect": 1,
+    "Search": 1,
+    "File download": 1,
+    "API": 4,
+    "GraphQL": 1,
+    "Authentication": 1
+  },
+  "duration_seconds": 0.461,
+  "errors": [],
+  "skipped_urls": [
+    {
+      "kind": "url",
+      "raw_url": "http://127.0.0.1:8000/search",
+      "url": "http://127.0.0.1:8000/search",
+      "source": "form_action",
+      "discovered_from": "http://127.0.0.1:8000/",
+      "depth": 1,
+      "in_scope": true,
+      "requested": false,
+      "fetched": false,
+      "skip_reason": "form_not_submitted",
+      "endpoint_fingerprint": "http://127.0.0.1:8000/search",
+      "parameter_fingerprint": "http://127.0.0.1:8000/search",
+      "categories": [
+        "Search"
+      ],
+      "is_api": false,
+      "interesting": true,
+      "classification_is_hint": true,
+      "parameters": []
+    },
+    {
+      "kind": "url",
+      "raw_url": "https://external.invalid/",
+      "url": "https://external.invalid/",
+      "source": "html_anchor",
+      "discovered_from": "http://127.0.0.1:8000/",
+      "depth": 1,
+      "in_scope": false,
+      "requested": false,
+      "fetched": false,
+      "skip_reason": "out_of_scope_host",
+      "endpoint_fingerprint": "https://external.invalid/",
+      "parameter_fingerprint": "https://external.invalid/",
+      "categories": [
+        "General"
+      ],
+      "is_api": false,
+      "interesting": false,
+      "classification_is_hint": true,
+      "parameters": []
+    },
+    {
+      "kind": "url",
+      "raw_url": "/api/profile",
+      "url": "http://127.0.0.1:8000/api/profile",
+      "source": "javascript",
+      "discovered_from": "http://127.0.0.1:8000/app.js",
+      "depth": 2,
+      "in_scope": true,
+      "requested": false,
+      "fetched": false,
+      "skip_reason": "method_metadata_only",
+      "endpoint_fingerprint": "http://127.0.0.1:8000/api/profile",
+      "parameter_fingerprint": "http://127.0.0.1:8000/api/profile",
+      "categories": [
+        "User management",
+        "API"
+      ],
+      "is_api": true,
+      "interesting": true,
+      "classification_is_hint": true,
+      "method": "POST",
+      "source_file": "http://127.0.0.1:8000/app.js",
+      "confidence": "high",
+      "parameters": [
+        {
+          "name": "name",
+          "source": "javascript_object",
+          "location": "body",
+          "observed": false
+        }
+      ],
+      "statically_inferred": true
+    },
+    {
+      "kind": "skipped",
+      "url": "http://127.0.0.1:8000/blocked",
+      "reason": "Forbidden by robots.txt",
+      "fetched": false,
+      "requested": false
+    },
+    {
+      "kind": "url",
+      "raw_url": "http://127.0.0.1:8000/api/users/{id}",
+      "url": "http://127.0.0.1:8000/api/users/{id}",
+      "source": "openapi",
+      "discovered_from": "http://127.0.0.1:8000/openapi.json",
+      "depth": 4,
+      "in_scope": true,
+      "requested": false,
+      "fetched": false,
+      "skip_reason": "speculative_reference",
+      "endpoint_fingerprint": "http://127.0.0.1:8000/api/users/{id}",
+      "parameter_fingerprint": "http://127.0.0.1:8000/api/users/{id}",
+      "categories": [
+        "User management",
+        "API"
+      ],
+      "is_api": true,
+      "interesting": true,
+      "classification_is_hint": true,
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "id",
+          "location": "path",
+          "source": "openapi",
+          "observed": false
+        }
+      ],
+      "statically_inferred": true,
+      "speculative": true
+    }
+  ],
+  "comparison": null
+}

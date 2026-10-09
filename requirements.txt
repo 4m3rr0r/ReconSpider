@@ -1,0 +1,5 @@
+# Cloud stack already supplies Scrapy/Twisted/lxml.
+pydantic>=2,<3
+PyYAML>=6
+httpx>=0.27,<1
+tldextract>=5,<6

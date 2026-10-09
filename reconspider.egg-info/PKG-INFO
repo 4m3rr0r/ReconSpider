@@ -1,0 +1,21 @@
+Metadata-Version: 2.4
+Name: reconspider
+Version: 0.1.0
+Summary: Scoped, asynchronous attack surface inventory for authorized reconnaissance
+License-Expression: MIT
+Requires-Python: >=3.11
+License-File: LICENSE
+Requires-Dist: Scrapy<3,>=2.14
+Requires-Dist: Twisted>=24.3
+Requires-Dist: pydantic<3,>=2
+Requires-Dist: PyYAML>=6
+Requires-Dist: httpx<1,>=0.27
+Requires-Dist: tldextract<6,>=5
+Provides-Extra: dev
+Requires-Dist: pytest>=8; extra == "dev"
+Requires-Dist: ruff>=0.9; extra == "dev"
+Requires-Dist: build>=1; extra == "dev"
+Requires-Dist: shub>=2.15; extra == "dev"
+Provides-Extra: browser
+Requires-Dist: scrapy-playwright>=0.0.40; extra == "browser"
+Dynamic: license-file

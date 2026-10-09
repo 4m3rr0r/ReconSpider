@@ -1,0 +1,20 @@
+[
+  {
+    "kind": "form",
+    "action": "http://127.0.0.1:8000/search",
+    "method": "GET",
+    "enctype": "application/x-www-form-urlencoded",
+    "parameters": [
+      {
+        "name": "q",
+        "type": "input",
+        "source": "html_form",
+        "location": "query",
+        "observed": true
+      }
+    ],
+    "discovered_from": "http://127.0.0.1:8000/",
+    "submitted": false,
+    "in_scope": true
+  }
+]

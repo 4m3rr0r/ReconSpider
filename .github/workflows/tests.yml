@@ -1,0 +1,20 @@
+name: Tests
+on: [push, pull_request]
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.11', '3.14']
+        scrapy: ['2.14.0', '2.19.0']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m pip install -e '.[dev]' wheel 'scrapy==${{ matrix.scrapy }}'
+      - run: pytest -q
+      - run: ruff check .
+      - run: ruff format --check .
+      - run: python -m build --no-isolation
+      - run: scrapy list
